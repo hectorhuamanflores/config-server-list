@@ -5,3 +5,23 @@ spring:
   data:
     mongodb:
         uri: mongodb://localhost:27017/db-ms-account
+  cloud:
+    discovery:
+        enabled: true
+    gateway:
+        discovery:
+            locator:
+                enabled: true
+                lower-case-service-id: true
+             
+
+eureka:
+  instance:
+     hostname: localhost
+     #hostname: eureka-service-contenedor
+     prefer-ip-address: true
+  client:
+     fetch-registry: true
+     register-with-eureka: true
+     service-url:
+        defaultZone: http://${eureka.instance.hostname}:8761/eureka/
