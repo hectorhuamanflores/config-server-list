@@ -25,7 +25,7 @@ spring:
           - id: ms-account
             uri: lb://ms-account
             predicates:
-              - Path=/Account/**,/AccountDetail/**
+              - Path=/account/**,/accountDetail/**
           - id: ms-account-transaction
             uri: lb://ms-account-transaction
             predicates:
