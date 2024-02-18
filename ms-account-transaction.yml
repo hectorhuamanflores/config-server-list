@@ -1,5 +1,5 @@
 server:
-  port: 8092
+  port: ${port:0}
   
 spring:
   data:
@@ -20,6 +20,7 @@ eureka:
      hostname: localhost
      #hostname: eureka-service-contenedor
      prefer-ip-address: true
+     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
      fetch-registry: true
      register-with-eureka: true

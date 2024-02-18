@@ -1,6 +1,6 @@
 
 server:
-   port: 8099
+   port: ${port:0}
 
 eureka:
   client:
@@ -11,6 +11,7 @@ eureka:
   instance:
      hostname: localhost
      prefer-ip-address: true
+     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
      
 spring:
   cloud:
